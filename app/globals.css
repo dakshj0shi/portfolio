@@ -1,26 +1,229 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Existing AMOLED Black Theme - Dark Mode Only (preserved) */
+  --background: #000000;
+  --foreground: #F5F5F7;
+  --card: #0F0F14;
+  --card-foreground: #F5F5F7;
+  --popover: #0F0F14;
+  --popover-foreground: #F5F5F7;
+  --primary: #7C3AED;
+  --primary-foreground: #F5F5F7;
+  --secondary: #15151C;
+  --secondary-foreground: #F5F5F7;
+  --muted: #15151C;
+  --muted-foreground: #A1A1AA;
+  --accent: #7C3AED;
+  --accent-foreground: #F5F5F7;
+  --destructive: #ef4444;
+  --destructive-foreground: #F5F5F7;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.1);
+  --ring: #7C3AED;
+  --radius: 1rem; /* Preserved, but will be overwritten by .dark below for dark mode */
+
+  /* Custom purple palette (preserved) */
+  --purple-primary: #7C3AED;
+  --purple-secondary: #5B21B6;
+  --purple-glow: #A78BFA;
+  --surface: #0F0F14;
+  --surface-elevated: #15151C;
+
+  /* Shadcn/ui default Light Mode variables (overridden by existing for dark mode, but here for completeness) */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  /* The original --radius: 1rem; is kept, but shadcn's default is 0.625rem for light mode.
+     As the existing theme is for dark mode only, this :root section is mostly a fallback.
+     The .dark block below will be more relevant. */
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* Shadcn/ui default Dark Mode variables, with existing custom colors taking precedence */
+  --background: #000000; /* Existing */
+  --foreground: #F5F5F7; /* Existing */
+  --card: #0F0F14; /* Existing */
+  --card-foreground: #F5F5F7; /* Existing */
+  --popover: #0F0F14; /* Existing */
+  --popover-foreground: #F5F5F7; /* Existing */
+  --primary: #7C3AED; /* Existing */
+  --primary-foreground: #F5F5F7; /* Existing */
+  --secondary: #15151C; /* Existing */
+  --secondary-foreground: #F5F5F7; /* Existing */
+  --muted: #15151C; /* Existing */
+  --muted-foreground: #A1A1AA; /* Existing */
+  --accent: #7C3AED; /* Existing */
+  --accent-foreground: #F5F5F7; /* Existing */
+  --destructive: #ef4444; /* Existing */
+  --destructive-foreground: #F5F5F7; /* Existing */
+  --border: rgba(255, 255, 255, 0.1); /* Existing */
+  --input: rgba(255, 255, 255, 0.1); /* Existing */
+  --ring: #7C3AED; /* Existing */
+  --radius: 1rem; /* Existing, takes precedence over shadcn default 0.625rem */
+
+  --chart-1: oklch(0.488 0.243 264.376); /* Shadcn new */
+  --chart-2: oklch(0.696 0.17 162.48); /* Shadcn new */
+  --chart-3: oklch(0.769 0.188 70.08); /* Shadcn new */
+  --chart-4: oklch(0.627 0.265 303.9); /* Shadcn new */
+  --chart-5: oklch(0.645 0.246 16.439); /* Shadcn new */
+  --sidebar: oklch(0.205 0 0); /* Shadcn new */
+  --sidebar-foreground: oklch(0.985 0 0); /* Shadcn new */
+  --sidebar-primary: oklch(0.488 0.243 264.376); /* Shadcn new */
+  --sidebar-primary-foreground: oklch(0.985 0 0); /* Shadcn new */
+  --sidebar-accent: oklch(0.269 0 0); /* Shadcn new */
+  --sidebar-accent-foreground: oklch(0.985 0 0); /* Shadcn new */
+  --sidebar-border: oklch(0.269 0 0); /* Shadcn new */
+  --sidebar-ring: oklch(0.439 0 0); /* Shadcn new */
 }
 
 @theme inline {
+  --font-sans: 'Inter', 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px); /* Existing radius-2xl */
+
+  /* Custom colors (preserved) */
+  --color-purple-primary: var(--purple-primary);
+  --color-purple-secondary: var(--purple-secondary);
+  --color-purple-glow: var(--purple-glow);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+
+  /* Shadcn/ui new color mappings */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #15151C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
+
+/* Gradient text animation */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Hide default cursor on desktop for custom cursor */
+@media (min-width: 768px) {
+  .cursor-none {
+    cursor: none;
+  }
+  
+  .cursor-none * {
+    cursor: none;
+  }
+}
+
+/* CRT flicker animation */
+@keyframes flicker {
+  0%, 100% { opacity: 0.01; }
+  50% { opacity: 0.02; }
+}
+
+/* Magnetic button hover effect */
+.magnetic-btn {
+  transition: transform 0.2s ease-out;
+}
+
+/* Glow effect for cards */
+.glow-card {
+  position: relative;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #7C3AED, #5B21B6, #7C3AED);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(8px);
+}
+
+.glow-card:hover::before {
+  opacity: 0.5;
 }
