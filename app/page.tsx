@@ -22,7 +22,7 @@ export default function Portfolio() {
     <EffectsProvider>
       <GlobalSplashCursor>
         <GlobalClickSpark>
-          <main className="min-h-screen bg-black">
+          <main className="min-h-screen bg-black overflow-x-hidden w-full">
             {/* Personality Elements */}
             <ScrollProgress />
             <SectionTransition />
