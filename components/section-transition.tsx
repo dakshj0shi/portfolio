@@ -9,6 +9,7 @@ export function SectionTransition() {
 
     useEffect(() => {
         let lastSection = ''
+        let isInitialLoad = true // Flag to prevent popup on initial load
 
         const handleScroll = () => {
             const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'community', 'contact']
@@ -22,13 +23,18 @@ export function SectionTransition() {
                 // Check if section is in view
                 if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
                     if (lastSection !== sectionId) {
-                        setActiveSection(sectionId)
-                        setShowTransition(true)
-                        lastSection = sectionId
+                        // Don't show transition on initial page load
+                        if (!isInitialLoad) {
+                            setActiveSection(sectionId)
+                            setShowTransition(true)
 
-                        setTimeout(() => {
-                            setShowTransition(false)
-                        }, 800)
+                            setTimeout(() => {
+                                setShowTransition(false)
+                            }, 800)
+                        } else {
+                            isInitialLoad = false
+                        }
+                        lastSection = sectionId
                     }
                     break
                 }

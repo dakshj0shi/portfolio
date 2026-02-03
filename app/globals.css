@@ -24,7 +24,8 @@
   --border: rgba(255, 255, 255, 0.1);
   --input: rgba(255, 255, 255, 0.1);
   --ring: #7C3AED;
-  --radius: 1rem; /* Preserved, but will be overwritten by .dark below for dark mode */
+  --radius: 1rem;
+  /* Preserved, but will be overwritten by .dark below for dark mode */
 
   /* Custom purple palette (preserved) */
   --purple-primary: #7C3AED;
@@ -54,40 +55,73 @@
 
 .dark {
   /* Shadcn/ui default Dark Mode variables, with existing custom colors taking precedence */
-  --background: #000000; /* Existing */
-  --foreground: #F5F5F7; /* Existing */
-  --card: #0F0F14; /* Existing */
-  --card-foreground: #F5F5F7; /* Existing */
-  --popover: #0F0F14; /* Existing */
-  --popover-foreground: #F5F5F7; /* Existing */
-  --primary: #7C3AED; /* Existing */
-  --primary-foreground: #F5F5F7; /* Existing */
-  --secondary: #15151C; /* Existing */
-  --secondary-foreground: #F5F5F7; /* Existing */
-  --muted: #15151C; /* Existing */
-  --muted-foreground: #A1A1AA; /* Existing */
-  --accent: #7C3AED; /* Existing */
-  --accent-foreground: #F5F5F7; /* Existing */
-  --destructive: #ef4444; /* Existing */
-  --destructive-foreground: #F5F5F7; /* Existing */
-  --border: rgba(255, 255, 255, 0.1); /* Existing */
-  --input: rgba(255, 255, 255, 0.1); /* Existing */
-  --ring: #7C3AED; /* Existing */
-  --radius: 1rem; /* Existing, takes precedence over shadcn default 0.625rem */
+  --background: #000000;
+  /* Existing */
+  --foreground: #F5F5F7;
+  /* Existing */
+  --card: #0F0F14;
+  /* Existing */
+  --card-foreground: #F5F5F7;
+  /* Existing */
+  --popover: #0F0F14;
+  /* Existing */
+  --popover-foreground: #F5F5F7;
+  /* Existing */
+  --primary: #7C3AED;
+  /* Existing */
+  --primary-foreground: #F5F5F7;
+  /* Existing */
+  --secondary: #15151C;
+  /* Existing */
+  --secondary-foreground: #F5F5F7;
+  /* Existing */
+  --muted: #15151C;
+  /* Existing */
+  --muted-foreground: #A1A1AA;
+  /* Existing */
+  --accent: #7C3AED;
+  /* Existing */
+  --accent-foreground: #F5F5F7;
+  /* Existing */
+  --destructive: #ef4444;
+  /* Existing */
+  --destructive-foreground: #F5F5F7;
+  /* Existing */
+  --border: rgba(255, 255, 255, 0.1);
+  /* Existing */
+  --input: rgba(255, 255, 255, 0.1);
+  /* Existing */
+  --ring: #7C3AED;
+  /* Existing */
+  --radius: 1rem;
+  /* Existing, takes precedence over shadcn default 0.625rem */
 
-  --chart-1: oklch(0.488 0.243 264.376); /* Shadcn new */
-  --chart-2: oklch(0.696 0.17 162.48); /* Shadcn new */
-  --chart-3: oklch(0.769 0.188 70.08); /* Shadcn new */
-  --chart-4: oklch(0.627 0.265 303.9); /* Shadcn new */
-  --chart-5: oklch(0.645 0.246 16.439); /* Shadcn new */
-  --sidebar: oklch(0.205 0 0); /* Shadcn new */
-  --sidebar-foreground: oklch(0.985 0 0); /* Shadcn new */
-  --sidebar-primary: oklch(0.488 0.243 264.376); /* Shadcn new */
-  --sidebar-primary-foreground: oklch(0.985 0 0); /* Shadcn new */
-  --sidebar-accent: oklch(0.269 0 0); /* Shadcn new */
-  --sidebar-accent-foreground: oklch(0.985 0 0); /* Shadcn new */
-  --sidebar-border: oklch(0.269 0 0); /* Shadcn new */
-  --sidebar-ring: oklch(0.439 0 0); /* Shadcn new */
+  --chart-1: oklch(0.488 0.243 264.376);
+  /* Shadcn new */
+  --chart-2: oklch(0.696 0.17 162.48);
+  /* Shadcn new */
+  --chart-3: oklch(0.769 0.188 70.08);
+  /* Shadcn new */
+  --chart-4: oklch(0.627 0.265 303.9);
+  /* Shadcn new */
+  --chart-5: oklch(0.645 0.246 16.439);
+  /* Shadcn new */
+  --sidebar: oklch(0.205 0 0);
+  /* Shadcn new */
+  --sidebar-foreground: oklch(0.985 0 0);
+  /* Shadcn new */
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  /* Shadcn new */
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  /* Shadcn new */
+  --sidebar-accent: oklch(0.269 0 0);
+  /* Shadcn new */
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  /* Shadcn new */
+  --sidebar-border: oklch(0.269 0 0);
+  /* Shadcn new */
+  --sidebar-ring: oklch(0.439 0 0);
+  /* Shadcn new */
 }
 
 @theme inline {
@@ -116,7 +150,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px); /* Existing radius-2xl */
+  --radius-2xl: calc(var(--radius) + 8px);
+  /* Existing radius-2xl */
 
   /* Custom colors (preserved) */
   --color-purple-primary: var(--purple-primary);
@@ -145,11 +180,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
     width: 100%;
+    scroll-snap-type: y proximity;
   }
+
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
@@ -158,22 +196,29 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   /* Prevent horizontal scroll on mobile */
-  html, body {
+  html,
+  body {
     max-width: 100vw;
     overflow-x: hidden;
   }
-  
+
   /* Ensure all containers respect viewport width */
   * {
     box-sizing: border-box;
   }
-  
+
   /* Optimize touch interactions */
   * {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+  }
+
+  /* Smooth scroll snap for sections */
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
   }
 }
 
@@ -197,9 +242,12 @@
 
 /* Gradient text animation */
 @keyframes gradient {
-  0%, 100% {
+
+  0%,
+  100% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
@@ -214,7 +262,7 @@
   .cursor-none {
     cursor: none;
   }
-  
+
   .cursor-none * {
     cursor: none;
   }
@@ -222,8 +270,15 @@
 
 /* CRT flicker animation */
 @keyframes flicker {
-  0%, 100% { opacity: 0.01; }
-  50% { opacity: 0.02; }
+
+  0%,
+  100% {
+    opacity: 0.01;
+  }
+
+  50% {
+    opacity: 0.02;
+  }
 }
 
 /* Magnetic button hover effect */

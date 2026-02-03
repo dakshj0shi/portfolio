@@ -50,7 +50,7 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#5B21B6] rounded-2xl blur-2xl opacity-40 scale-105" />
 
               {/* CRT Monitor Frame */}
-              <div className="relative w-64 h-64 md:w-80 md:h-80 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-2xl p-3 shadow-2xl shadow-black/50 mx-32">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 max-w-[90vw] mx-auto bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-2xl p-3 shadow-2xl shadow-black/50">
                 {/* Monitor bezel */}
                 <div className="relative w-full h-full bg-[#0c0c0c] rounded-xl overflow-hidden border-4 border-[#1f1f1f]">
                   {/* Screen inner frame */}
@@ -98,23 +98,23 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="order-1 lg:order-2"
           >
-            <h3 className="text-2xl md:text-3xl font-semibold text-[#F5F5F7] mb-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#F5F5F7] mb-6 break-words">
               Building the decentralized future,{" "}
               <span className="text-[#7C3AED]">one block at a time</span>
             </h3>
 
-            <div className="space-y-4 text-[#A1A1AA] text-base md:text-lg leading-relaxed">
-              <p>
+            <div className="space-y-4 text-[#A1A1AA] text-base md:text-lg leading-relaxed w-full overflow-hidden">
+              <p className="break-words w-full">
                 I&apos;m a passionate full-stack developer and Web3 builder pursuing Computer Science
                 at Poornima College of Engineering, Jaipur. My journey spans from building scalable
                 web applications to exploring the exciting world of blockchain technologies.
               </p>
-              <p>
+              <p className="break-words w-full">
                 As a Dev Advocate at HackQuest, I help developers onboard into Web3 and create
                 educational content for the blockchain ecosystem. I&apos;ve co-founded the AWS Cloud Club
                 and co-organized Hack-It-Sapiens hackathons, building communities of 500+ developers.
               </p>
-              <p>
+              <p className="break-words w-full">
                 When I&apos;m not coding, you&apos;ll find me contributing to open-source projects,
                 organizing workshops, or helping fellow developers break into tech.
               </p>

@@ -263,7 +263,7 @@ export function Hero() {
             {/* CRT Monitor Frame */}
             <div className="relative">
               {/* Monitor outer shell */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[380px] bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-2xl p-3 md:p-4 shadow-2xl shadow-black/50">
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-[400px] lg:h-[380px] max-w-[90vw] mx-auto bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] rounded-2xl p-3 md:p-4 shadow-2xl shadow-black/50">
                 {/* Monitor bezel */}
                 <div className="relative w-full h-full bg-[#0c0c0c] rounded-xl overflow-hidden border-4 border-[#1f1f1f]">
                   {/* Screen inner frame with slight curve illusion */}

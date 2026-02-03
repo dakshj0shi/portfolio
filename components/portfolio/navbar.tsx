@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { useEffects } from "@/components/effects-context"
 
 const navItems = [
+  { name: "Home", href: "#" },
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
@@ -76,7 +77,7 @@ export function Navbar() {
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center h-16 md:h-20">
+          <div className="flex items-center justify-between h-16 md:h-20 md:justify-center">
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-2 px-3 py-2 rounded-full bg-[#0F0F14]/80 backdrop-blur-sm border border-white/10">
