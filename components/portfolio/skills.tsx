@@ -6,29 +6,29 @@ import { Code2, Globe, Blocks, Cloud, Wrench } from "lucide-react"
 
 const skillCategories = [
   {
-    title: "Languages",
-    icon: Code2,
-    skills: ["C", "C++", "Python", "JavaScript", "TypeScript", "SQL", "Shell"],
-  },
-  {
-    title: "Web Development",
-    icon: Globe,
-    skills: ["React", "Next.js", "Node.js", "Express", "HTML", "CSS", "Tailwind CSS", "Framer Motion"],
-  },
-  {
-    title: "Blockchain",
+    title: "Core Web3",
     icon: Blocks,
-    skills: ["Solidity", "Ethereum", "Hardhat", "Foundry", "ethers.js", "Web3.js", "Smart Contracts", "DeFi"],
+    skills: ["Solidity", "Smart Contracts", "Web3.js", "Ethers.js", "Hardhat", "Foundry"],
   },
   {
-    title: "Cloud & DevOps",
-    icon: Cloud,
-    skills: ["AWS (EC2, S3, RDS, Cognito)", "Docker", "Git", "GitHub", "Linux", "Vercel", "CI/CD"],
+    title: "Blockchain Ecosystem",
+    icon: Globe,
+    skills: ["Ethereum", "DeFi", "OpenZeppelin", "Chainlink", "IPFS", "The Graph"],
   },
   {
-    title: "Tools & Others",
+    title: "AI & Data Agents",
+    icon: Code2,
+    skills: ["Python", "OpenAI API", "Pandas", "PyArrow", "Streamlit", "LangChain"],
+  },
+  {
+    title: "Fullstack Engineering",
     icon: Wrench,
-    skills: ["Figma", "VS Code", "MySQL", "PostgreSQL", "MongoDB", "Prisma", "REST APIs", "Streamlit"],
+    skills: ["React", "Next.js", "Node.js", "TypeScript", "JavaScript", "SQL", "Tailwind CSS"],
+  },
+  {
+    title: "Cloud & Tools",
+    icon: Cloud,
+    skills: ["AWS", "Docker", "Git", "Linux", "Figma", "CI/CD"],
   },
 ]
 
@@ -117,7 +117,7 @@ export function Skills() {
         >
           <p className="text-sm text-[#A1A1AA] mb-4">Also experienced with</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {["OpenZeppelin", "Chainlink", "IPFS", "The Graph", "Pandas", "PyArrow", "OpenAI API", "Vercel"].map(
+            {["Vercel", "Prisma", "MongoDB", "PostgreSQL", "REST APIs", "C++", "Shell"].map(
               (tech, index) => (
                 <motion.span
                   key={tech}

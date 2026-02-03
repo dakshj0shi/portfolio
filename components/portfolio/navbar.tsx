@@ -59,6 +59,11 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     setIsOpen(false)
+    // Handle home/hero section - scroll to top
+    if (href === "#" || href === "#hero") {
+      window.scrollTo({ top: 0, behavior: "smooth" })
+      return
+    }
     const element = document.querySelector(href)
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
@@ -161,11 +166,26 @@ export function Navbar() {
                     {item.name}
                   </motion.button>
                 ))}
-                <motion.div
+                <motion.button
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: navItems.length * 0.1 }}
+                  onClick={toggleSplashCursor}
+                  className={`p-4 text-left text-lg font-medium rounded-xl transition-all flex items-center gap-3 ${splashCursorEnabled
+                      ? "text-[#7C3AED] bg-[#7C3AED]/10"
+                      : "text-[#A1A1AA] hover:text-[#F5F5F7] hover:bg-white/5"
+                    }`}
+                  title={splashCursorEnabled ? "Disable Splash Cursor" : "Enable Splash Cursor"}
+                >
+                  <Droplet size={20} />
+                  <span>Splash Cursor</span>
+                </motion.button>
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ delay: (navItems.length + 1) * 0.1 }}
                 >
                   <Button
                     onClick={() => scrollToSection("#contact")}

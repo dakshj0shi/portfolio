@@ -5,37 +5,39 @@ import { motion, useInView } from "framer-motion"
 import { ExternalLink, Github, FileText, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const categories = ["All", "Web", "AI", "Data"]
+const categories = ["All", "Web3", "AI", "Web"]
 
 const projects = [
+  {
+    title: "ArcadeFi",
+    description: "A Web3 pay-per-play gaming arcade using AI wallet agents and streaming crypto payments. Players only pay for actual playtime while developers receive instant revenue splits. Built as a working product and won a hackathon.",
+    image: "/projects/arcadefi.jpg",
+    category: "Web3",
+    tags: ["Solidity", "AI Agents", "Streaming Payments"],
+    features: [
+      "Pay-per-15-second charging",
+      "Streaming payments",
+      "AI wallet agent auto-payments",
+      "Spend limits",
+      "Zero-click UX",
+      "Instant dev payouts",
+      "97/3 revenue split",
+      "Multiplayer planned",
+      "Gasless UX planned",
+      "Developer upload portal planned"
+    ],
+    liveUrl: "#",
+    githubUrl: "https://github.com/dakshj0shi",
+    caseStudyUrl: null,
+    featured: true,
+  },
   {
     title: "Mapify",
     description: "A scalable full-stack AI learning path platform with gamification features (XP, badges, streaks) for 200+ early users. Built with Vercel, AWS (RDS, Cognito, S3) and OpenAI GPT integration.",
     image: "/projects/mapify.jpg",
     category: "AI",
     tags: ["Next.js", "AWS", "OpenAI", "Gamification"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/dakshj0shi",
-    caseStudyUrl: null,
-    featured: true,
-  },
-  {
-    title: "F1 Data Analysis App",
-    description: "Interactive Streamlit dashboard processing 50k+ rows of F1 data with Pandas/PyArrow. Features comparative team/driver analytics with custom HTML/CSS visualizations and 40% optimized query execution.",
-    image: "/projects/f1-analysis.jpg",
-    category: "Data",
-    tags: ["Python", "Streamlit", "Pandas", "PyArrow"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/dakshj0shi",
-    caseStudyUrl: null,
-    featured: true,
-  },
-  {
-    title: "College Fest Portal",
-    description: "Official fest portal for Poornima College managing 1,000+ registrations with integrated SQL backend and automated event data pipelines, reducing manual workload by 40%.",
-    image: "/projects/fest-portal.jpg",
-    category: "Web",
-    tags: ["React", "Node.js", "MySQL", "Full-Stack"],
+    features: ["AI Learning Paths", "Gamification System", "AWS Infrastructure"],
     liveUrl: "#",
     githubUrl: "https://github.com/dakshj0shi",
     caseStudyUrl: null,
@@ -46,29 +48,20 @@ const projects = [
     description: "Event management platform with registration, scheduling, and live updates for 500+ hackathon attendees. Delivered 1 week early with streamlined frontend-backend integration.",
     image: "/projects/hackathon.jpg",
     category: "Web",
-    tags: ["React", "Node.js", "Event Management", "Full-Stack"],
+    tags: ["React", "Node.js", "Event Management", "Web3"],
+    features: ["Live Updates", "Registration System", "Real-time Scheduling"],
     liveUrl: "#",
     githubUrl: "https://github.com/dakshj0shi",
     caseStudyUrl: null,
     featured: false,
   },
   {
-    title: "Business Website",
-    description: "Full-stack website for local business using Node.js and MySQL, achieving 200+ daily users. Features smooth responsive UI with dynamic components and multiple theme options.",
-    image: "/projects/business.jpg",
-    category: "Web",
-    tags: ["Node.js", "MySQL", "React", "Responsive"],
-    liveUrl: "#",
-    githubUrl: "https://github.com/dakshj0shi",
-    caseStudyUrl: null,
-    featured: false,
-  },
-  {
-    title: "Portfolio v3",
-    description: "My personal portfolio website built with modern technologies, smooth animations, and AMOLED dark theme.",
-    image: "/projects/portfolio.jpg",
-    category: "Web",
-    tags: ["Next.js", "Framer Motion", "Tailwind", "TypeScript"],
+    title: "F1 Data Analysis",
+    description: "Interactive Streamlit dashboard processing 50k+ rows of F1 data with Pandas/PyArrow. Features comparative team/driver analytics with custom HTML/CSS visualizations.",
+    image: "/projects/f1-analysis.jpg",
+    category: "Data",
+    tags: ["Python", "Streamlit", "Pandas", "PyArrow"],
+    features: ["50k+ Rows Processing", "Custom Visualizations", "Comparative Analytics"],
     liveUrl: "#",
     githubUrl: "https://github.com/dakshj0shi",
     caseStudyUrl: null,
@@ -99,11 +92,11 @@ export function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#F5F5F7] mb-4">
-            Featured <span className="text-[#7C3AED]">Projects</span>
+            Web3 / Onchain <span className="text-[#7C3AED]">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#7C3AED] to-[#A78BFA] mx-auto rounded-full" />
           <p className="mt-6 text-[#A1A1AA] max-w-2xl mx-auto">
-            A selection of projects that showcase my skills in blockchain, web development, and AI
+            A selection of projects that showcase my skills in blockchain, crypto, and AI agents
           </p>
         </motion.div>
 
@@ -118,11 +111,10 @@ export function Projects() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-[#7C3AED] text-white"
-                  : "bg-[#0F0F14] text-[#A1A1AA] hover:bg-[#15151C] hover:text-[#F5F5F7] border border-white/10"
-              }`}
+              className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
+                ? "bg-[#7C3AED] text-white"
+                : "bg-[#0F0F14] text-[#A1A1AA] hover:bg-[#15151C] hover:text-[#F5F5F7] border border-white/10"
+                }`}
             >
               {category}
             </button>
@@ -143,64 +135,82 @@ export function Projects() {
               exit={{ opacity: 0, y: 30 }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               whileHover={{ y: -8 }}
-              className="group relative"
+              className="group relative h-[450px]"
             >
-              {/* Glass card */}
-              <div className="relative h-full rounded-2xl bg-[#0F0F14]/80 backdrop-blur-xl border border-white/10 overflow-hidden hover:border-[#7C3AED]/50 transition-all duration-300">
-                {/* Glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/0 to-[#5B21B6]/0 group-hover:from-[#7C3AED]/10 group-hover:to-[#5B21B6]/5 transition-all duration-500" />
+              {/* Card Container */}
+              <div className="relative h-full rounded-2xl bg-[#0F0F14] border border-white/10 overflow-hidden hover:border-[#7C3AED]/50 transition-all duration-300 shadow-xl">
 
-                {/* Project thumbnail */}
-                <div className="relative h-48 bg-gradient-to-br from-[#15151C] to-[#0F0F14] flex items-center justify-center overflow-hidden">
-                  {/* Decorative pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute inset-0" style={{
-                      backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
-                      backgroundSize: '24px 24px'
-                    }} />
-                  </div>
-                  
-                  {/* Project icon/placeholder */}
-                  <div className="text-6xl font-bold bg-gradient-to-br from-[#7C3AED] to-[#A78BFA] bg-clip-text text-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                    {project.title.charAt(0)}
-                  </div>
-                  
-                  {/* Featured badge */}
-                  {project.featured && (
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-[#7C3AED]/90 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                      Featured
+                {/* Default View: Image + Title Overlay */}
+                <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-0">
+                  {/* Image Background */}
+                  <div className="relative h-full w-full bg-[#15151C]">
+                    {/* Placeholder Pattern to simulate image if src fails or use actual image */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#15151C] to-[#0F0F14]">
+                      {/* Decorative pattern */}
+                      <div className="absolute inset-0 opacity-10" style={{
+                        backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
+                        backgroundSize: '24px 24px'
+                      }} />
                     </div>
-                  )}
-                  
-                  {/* Category badge */}
-                  <div className="absolute top-4 right-4 px-3 py-1 bg-black/50 backdrop-blur-sm rounded-full text-xs font-medium text-[#A1A1AA]">
-                    {project.category}
+
+                    {/* Letter Avatar if no image */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-9xl font-bold text-white/5">{project.title.charAt(0)}</span>
+                    </div>
+
+                    {/* Category Badge */}
+                    <div className="absolute top-4 right-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-xs font-medium text-[#A78BFA] border border-white/10">
+                      {project.category}
+                    </div>
+
+                    {/* Title Overlay at Bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+                      <h3 className="text-2xl font-bold text-[#F5F5F7]">
+                        {project.title}
+                      </h3>
+                      <div className="flex items-center gap-2 mt-2 text-[#7C3AED] text-sm font-medium">
+                        <span>View Details</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="relative p-6">
-                  <h3 className="text-xl font-semibold text-[#F5F5F7] mb-2 group-hover:text-[#7C3AED] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-[#A1A1AA] text-sm mb-4 line-clamp-2">
-                    {project.description}
-                  </p>
+                {/* Hover View: Details Overlay */}
+                <div className="absolute inset-0 bg-[#0F0F14]/95 backdrop-blur-sm p-6 flex flex-col opacity-0 group-hover:opacity-100 transition-opacity duration-300 overflow-y-auto custom-scrollbar">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-[#F5F5F7] mb-2">{project.title}</h3>
+                    <p className="text-[#A1A1AA] text-sm mb-4 leading-relaxed">
+                      {project.description}
+                    </p>
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 text-xs font-medium rounded-md bg-[#15151C] text-[#A78BFA] border border-white/5"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    {/* Features List */}
+                    {project.features && (
+                      <div className="mb-4 space-y-2">
+                        <h4 className="text-xs font-semibold text-[#7C3AED] uppercase tracking-wider">Key Features</h4>
+                        <ul className="text-xs text-[#A1A1AA] space-y-1 list-disc list-inside">
+                          {project.features.map((feature, i) => (
+                            <li key={i}>{feature}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 text-xs font-medium rounded-md bg-[#7C3AED]/10 text-[#A78BFA] border border-[#7C3AED]/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Actions */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 pt-4 border-t border-white/10 shrink-0">
                     <Button
                       size="sm"
                       className="bg-[#7C3AED] hover:bg-[#5B21B6] text-white flex-1"

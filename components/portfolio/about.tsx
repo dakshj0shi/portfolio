@@ -99,24 +99,21 @@ export function About() {
             className="order-1 lg:order-2"
           >
             <h3 className="text-2xl md:text-3xl font-semibold text-[#F5F5F7] mb-6 break-words">
-              Building the decentralized future,{" "}
-              <span className="text-[#7C3AED]">one block at a time</span>
+              Shipping onchain products that <span className="text-[#7C3AED]">people actually use</span>.
             </h3>
 
             <div className="space-y-4 text-[#A1A1AA] text-base md:text-lg leading-relaxed w-full overflow-hidden">
               <p className="break-words w-full">
-                I&apos;m a passionate full-stack developer and Web3 builder pursuing Computer Science
-                at Poornima College of Engineering, Jaipur. My journey spans from building scalable
-                web applications to exploring the exciting world of blockchain technologies.
+                I&apos;m Daksh — a Web3 engineer building decentralized products, on-chain systems, and agent-driven applications. I focus on turning ideas into working software, from smart contracts and crypto-native tools to automated systems that handle real users and real value.
               </p>
               <p className="break-words w-full">
-                As a Dev Advocate at HackQuest, I help developers onboard into Web3 and create
-                educational content for the blockchain ecosystem. I&apos;ve co-founded the AWS Cloud Club
-                and co-organized Hack-It-Sapiens hackathons, building communities of 500+ developers.
+                My work sits at the intersection of blockchains, AI agents, and product design — creating practical, reliable products built for real-world use rather than demos. I’ve developed AI bots and automation solutions for crypto projects and regularly ship through hackathons and fast-paced builds.
               </p>
               <p className="break-words w-full">
-                When I&apos;m not coding, you&apos;ll find me contributing to open-source projects,
-                organizing workshops, or helping fellow developers break into tech.
+                Outside of tech, I follow F1, play football, spend time with cats, and enjoy art and design — interests that shape how I think about creativity and product experiences.
+              </p>
+              <p className="break-words w-full">
+                Web3 is where I build, experiment, and create.
               </p>
             </div>
 

@@ -14,9 +14,9 @@ const PixelBlast = dynamic(() => import("@/components/PixelBlast"), {
 
 const subtitles = [
   "Dev Advocate @ HackQuest",
-  "Full-Stack Developer",
+  "Web3 Engineer",
   "Open Source Contributor",
-  "Web3 Builder",
+  "Blockchain Builder",
 ]
 
 // Client-side only floating particles to prevent hydration mismatch
@@ -204,7 +204,7 @@ export function Hero() {
                 transition={{ delay: 0.4 }}
                 className="text-xl sm:text-2xl md:text-3xl font-medium text-[#A1A1AA] mb-4"
               >
-                Full-Stack Developer & Web3 Builder
+                Web3 Engineer & Blockchain Builder
               </motion.h2>
 
               {/* Typing animation */}

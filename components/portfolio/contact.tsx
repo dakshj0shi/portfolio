@@ -162,10 +162,10 @@ export function Contact() {
               <h3 className="text-xl font-semibold text-[#F5F5F7] mb-4">
                 Email me directly
               </h3>
-              <div className="flex items-center gap-4">
-                <div className="flex-1 flex items-center gap-3 p-4 rounded-xl bg-[#15151C] border border-white/10">
-                  <Mail className="w-5 h-5 text-[#7C3AED]" />
-                  <span className="text-[#F5F5F7] font-mono text-sm md:text-base truncate">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex-1 w-full flex items-center gap-3 p-4 rounded-xl bg-[#15151C] border border-white/10">
+                  <Mail className="w-5 h-5 text-[#7C3AED] flex-shrink-0" />
+                  <span className="text-[#F5F5F7] font-mono text-sm md:text-base break-all">
                     {email}
                   </span>
                 </div>

@@ -20,14 +20,14 @@ const achievements = [
   {
     icon: Presentation,
     title: "Hack-It-Sapiens Co-Organizer",
-    description: "Led a 6-member technical team to build and deploy event infrastructure for 500+ participants. Managed backend deployment and cross-team workflows with zero downtime.",
-    highlights: ["500+ Participants", "6-Member Team", "Zero Downtime"],
+    description: "Organized 2 small-scale offline Web3 hackathons and 1 large-scale flagship hackathon. Led technical team to build event infrastructure.",
+    highlights: ["3 Hackathons", "Web3 Events", "Infrastructure"],
   },
   {
     icon: Users,
     title: "Dev Advocate @ HackQuest",
-    description: "Creating educational content and helping developers onboard into Web3. Building community engagement for blockchain education and developer advocacy.",
-    highlights: ["Web3 Education", "Content Creation", "Community"],
+    description: "Mentorship, developer support, and ecosystem contribution. Helping developers onboard into Web3.",
+    highlights: ["Mentorship", "Developer Support", "Ecosystem"],
   },
 ]
 
